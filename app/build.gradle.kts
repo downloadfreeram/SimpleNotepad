@@ -1,11 +1,12 @@
 plugins {
+    id("kotlin-kapt")
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 }
 
 android {
     namespace = "com.example.simplenotepad"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.simplenotepad"
@@ -60,6 +61,12 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation (libs.androidx.lifecycle.viewmodel.compose)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.runtime.compose)
+    implementation (libs.androidx.room.runtime)
+    annotationProcessor (libs.androidx.room.compiler)
+    kapt (libs.androidx.room.compiler)
+    implementation (libs.androidx.room.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
