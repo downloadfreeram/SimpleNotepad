@@ -34,6 +34,6 @@ androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "
 
 
 [plugins]
-android-application = { id = "com.android.application", version = "8.0.0" }
+android-application = { id = "com.android.application", version = "8.6.0" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.9.0" }
 
