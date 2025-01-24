@@ -10,4 +10,8 @@ import com.example.simplenotepad.noteFeatures.domain.model.Note
 )
 abstract class noteDB: RoomDatabase() {
     abstract val noteDao: noteDao
+
+    companion object {
+        const val DATABASE_NAME = "notes_db"
+    }
 }
