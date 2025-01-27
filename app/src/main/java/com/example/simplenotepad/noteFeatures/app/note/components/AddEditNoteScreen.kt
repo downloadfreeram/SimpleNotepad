@@ -136,7 +136,7 @@ fun AddEditNoteScreen(
             }
             Spacer(modifier = Modifier.height(16.dp))
             TransparentHintTextField(text = titleState.text,
-                hint = titleState.text,
+                hint = titleState.hint,
                 onValueChange = {
                     viewModel.onEvent(AddEditNoteEvent.enteredTitle(it))
                 },
@@ -145,11 +145,11 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = titleState.isHintVisible,
                 singleLine = true,
-                textStyle = MaterialTheme.typography.bodySmall
+                textStyle = MaterialTheme.typography.bodyLarge
             )
             Spacer(modifier = Modifier.height(16.dp))
             TransparentHintTextField(text = contentState.text,
-                hint = contentState.text,
+                hint = contentState.hint,
                 onValueChange = {
                     viewModel.onEvent(AddEditNoteEvent.enteredContent(it))
                 },
@@ -158,7 +158,7 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = contentState.isHintVisible,
                 singleLine = true,
-                textStyle = MaterialTheme.typography.bodyMedium,
+                textStyle = MaterialTheme.typography.bodySmall,
                 modifier = Modifier.fillMaxHeight()
             )
         }

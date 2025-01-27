@@ -37,10 +37,10 @@ fun NoteItem(
     ) {
         Canvas(modifier = Modifier.matchParentSize()) {
             val clipPath = Path().apply {
-                lineTo(size.width,0f)
-                lineTo(0f,size.width)
-                lineTo(size.width,size.height)
-                lineTo(0f,size.height)
+                moveTo(0f, 0f)
+                lineTo(size.width, 0f)
+                lineTo(size.width, size.height)
+                lineTo(0f, size.height)
                 close()
             }
             clipPath(clipPath) {
