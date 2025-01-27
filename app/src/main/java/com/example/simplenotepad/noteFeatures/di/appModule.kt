@@ -6,6 +6,7 @@ import com.example.simplenotepad.noteFeatures.data.dataSource.noteDB
 import com.example.simplenotepad.noteFeatures.data.dataSource.noteDao
 import com.example.simplenotepad.noteFeatures.data.repository.noteRepository
 import com.example.simplenotepad.noteFeatures.data.repository.noteRepositoryImplementation
+import com.example.simplenotepad.noteFeatures.domain.useCase.addNote
 import com.example.simplenotepad.noteFeatures.domain.useCase.deleteNote
 import com.example.simplenotepad.noteFeatures.domain.useCase.useCaseGetNotes
 import com.example.simplenotepad.noteFeatures.domain.useCase.useCaseNote
@@ -39,7 +40,8 @@ object appModule {
     fun provideNoteUseCase(repository: noteRepository) : useCaseNote {
         return useCaseNote(
             getNotes = useCaseGetNotes(repository),
-            delete = deleteNote(repository)
+            delete = deleteNote(repository),
+            add = addNote(repository)
         )
     }
 }
